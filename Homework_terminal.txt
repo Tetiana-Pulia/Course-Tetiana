@@ -46,11 +46,13 @@ mv Filename /Path/to/the/new/Folder
 Якщо зразу кілька файлів, то mv file1.ext1 file2.ext2 file3.ext3 /destination/
 !але треба знаходитися в тій директорії, де ці файли зараз перебувають, бо виб’є, що помилка
 
+
 14) скопировать любые 2 файла, которые вы создали, в любую другую папку.
 cp Way/to/this/file/Filename Way/to/the/new/folder
 якщо кілька зразу файлів
 сp file1.ext1 file2.ext2 file3.ext3.. /destination/
 !але треба знаходитися в тій директорії, де ці файли зараз перебувають, бо вибє, що помилка
+
 
 15) Найти файл по имени
 але це пошук файлу в поточній папці, де і знаходжуся
@@ -58,6 +60,7 @@ cp Way/to/this/file/Filename Way/to/the/new/folder
 •	find -name Filename (покаже всі папки, де access denied, тобто вилізе дуже багато тексту)
 •	find . -name Filename 2>/dev/null (тоді не буде показувати, куди access denied, а чітко покаже зразу потрібний файл)
 find ./ -type f -name Filename шукати по всьому компу, де може бути цей файл
+
 
 16) просмотреть содержимое в реальном времени (2 варианта)
 •	cat Filename
@@ -72,7 +75,6 @@ Grep «Word» Filename
 To view the first ten lines of a file: head Filename
 
 To view a certain number of first lines in a file: head -n Filename тут n= number of lines
-
 
 
 18) вывести несколько последних строк из текстового файла
@@ -115,10 +117,4 @@ ls -la
 mv 5.json /c/Redesign_landing/Day_1/Lesson_1
 cd ..
 mv 1.txt /c/Redesign_landing/Day_1/Lesson_1/Additional_info/My_search
-
-
-
-
-
-
 
