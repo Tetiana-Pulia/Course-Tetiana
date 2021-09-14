@@ -1,0 +1,55 @@
+In case if your bug report will be good on, it helps your developers to fix it and make the more reliable product.
+How it helps developers exactly:
+•	tells about issues that they ain’t aware of
+•	helps determine new features that they may not have thought of
+•	helps get a feel as to how their customers use the software, so they can make it better
+And if you write your bug report effectively then bug have more chances to be fixed. So fixing bugs are directly dependent on how you report it.
+Bug report should include
+
+1.	Bug ID
+Testers may use a bug tracking system such as Bugzilla, JIRA, Lean Testing, or some other software that automatically assigns an ID to the document. Alternately, testers should assign an ID manually. In practice, almost no one manually writes bug IDs today.Using an ID will save much time for developers compared to the alternative of writing out a full title.
+Ex: SB-WEB-121 or SB-MOB-231
+
+2.	Bug Summary or Description
+In JIRA a summary is similar to a title. The summary may be considered the main part of the bug report. You should use short and informative titles. A bug summary usually consists of an Epic and short description of the problem. Epic in JIRA is the name of a large chunk of functionality, like Chat or User Profile. A short description is one or two sentences that tell exactly what happened. 
+Ex: “About the company screen. Red strip on the top of the screen” 
+3.	Test environment and application version
+Usually, an application is updated every two to three weeks. Testers should always specify the exact version of the application in which they reproduced a bug.
+A test environment can be a website version, an operating system, or a web browser name and its version, screen size depending on the type of the bug. Make sure your developers know your technical environment.
+
+4.	Steps to reproduce
+Make sure to describe, with as much detail as possible, the steps you took before you encountered the bug.
+Ex: Go to Settings > Profile (this would take user to new screen)
+Tap on More Options > Delete Account”
+
+5.	Expected vs. actual results
+Explain what results you expected - be as specific as possible. Just saying "the app doesn’t work as expected" is not useful
+An actual result is what happens when a tester reproduces a bug. 
+An expected result is what we predicted as normal functionality under the given conditions.
+Ex:Actual Result: The chosen item is deleted from the list.
+Expected Result: The page with the detailed description of Reese’s Mini Pieces should be opened.
+
+6.	Bug Severity
+Bug Severity is an estimation of the impact of the bug on the application, along a scale ranging from critical (a bug blocks key functionality) to low (a bug is very difficult to reproduce; main functionality works as it should, but there are minor issues with some rarely used functions). Generally, testers use this tool.
+This describes the impact of the bug.
+Types of Severity:
+•	Blocker: No further testing work can be done.
+•	Critical: Application crash, Loss of data.
+•	Major: Major loss of function.
+•	Minor: Minor loss of function.
+•	Trivial: Some UI enhancements.
+•	Enhancement: Request for a new feature or some enhancement in existing one.
+
+7.	Bug Priority
+Bug Priority, in turn, is a tool for outlining the hierarchy of bug fixes. Project managers usually set a priority.  t’s showing to the developer how soon it has to be fixed. 
+Priority is generally set from 1 to 5. The lower the number, the higher priority. 1 score – must be fixed as soon as possible. 5 score – can fix when time permits.
+In short, if key features don’t work, then a bug is ranked as ‘critical’ for both priority and severity. But when a non-working feature is rarely used, we assign a critical level of Severity (this bug concerns functionality) and low level of Priority. Below you will find a real-life example.
+Ex: “Wrong spelling in the H1 heading 'Thes is our website!' on the landing page.”
+This bug gets Low Severity because it doesn't influence functionality. Users are still able to do something on this page. But we should assign High Priority to this bug, because this is a heading – the first thing a user will see when coming to your website. And there shouldn't be any spelling mistakes.
+In reality, our testers initially specify the Priority in JIRA. They should then inform web developers and project managers about a bug and its priority and/or severity. Then the project manager may contact the client and tell them what happened. The client then decides whether this issue must be resolved as soon as possible or if it can wait. The client's opinion may be different from what a tester thinks, so these priorities may easily be changed.
+
+8.	Attachments to the bug report
+This is the last section of the bug report. If necessary, a tester may attach any relevant additional documentation. The goal is to gather as much documentation as possible. Attachments generally include: screenshots, a log.txt file, or a file that a tester was trying to import.
+
+9.	Optional: You can also include extra information such as the name of the reporter, person assigned or a due date.
+
