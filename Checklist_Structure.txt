@@ -1,0 +1,26 @@
+Checklist - is a list of tests which should be run in a definite procedure. It helps to understand if testing is fully run and how many failed. It also helps formalize testing separetely taken functionality, putting tests in a list. Test order in the checklist may be strict as well as random.
+
+It may include
+1.	Build: 1.0
+2.	Environment: Windows 10
+3.	Test date
+4.	Tester
+5.	Test type (Smoke..)
+6.	Description, what exactly is checked
+7.	Result (Passed or Failed)
+Advantages of using checklists in testing
+Checklist-based testing is widely used by QA experts advocating for its convenience and productivity. Their knowledge and experience form the base for performance testing of a high quality. Main reasons to use this type of tests are:
+
+Advantages
+•	Flexibility. This kind of checking can be used in all testing types.
+•	Easy to create. It is not difficult to create, use and maintain a checklist.
+•	Analyzing the results. Checklists are easy to follow and examine.
+•	Team integration. The checklist can be ready-made guidance and help new testing personnel to integrate into work.
+•	Deadlines control. This type of testing helps to control test accomplishment and not to miss some critical bugs before the deadline.
+
+Difficulties of using checklists in testing
+•	Different interpretation. QA engineers with various backgrounds can accomplish identical tasks using different approaches.
+•	“Holes” in coverage. It is difficult to capture all functional or structural components, especially those of higher levels.
+•	Item overlap. Trying to cover a big scope of material there may be a duplication of the same information. This can lead to excessive testings.
+•	Reporting problems. Complex system components, functions, and their interaction are difficult or even impossible to illustrate, applying checklists
+
