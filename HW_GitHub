@@ -61,6 +61,6 @@ git push
 Сompare and pull request → Create pull request → Merge pull request
 
 10.	Синхронизировать Внешнюю и Локальную ветки Main
-Git pull
-Ls -la перевірила, чи точно додався в локально в гілку Main файл 	Checklist_Structure.txt
+git pull
+ls -la перевірила, чи точно додався в локально в гілку Main файл 	Checklist_Structure.txt
 
