@@ -1,0 +1,295 @@
+[200~1. Создайте базу из представленной картинки.
+      - У каждой таблицы должно быть поле id
+      - id автоинкрементальный и является первичным ключом
+
+create table employees (
+id serial primary key,
+employee_name varchar(100)
+);
+
+create table roles (
+id serial primary key,
+role_title varchar(100)
+);
+
+create table employees_roles (
+       id serial primary key,
+       id_role int not null,
+       id_employee int not null,
+       foreign key (id_role)
+       references roles (id),
+       foreign key (id_employee)
+       references employees (id)
+);
+
+create table salary (
+       id serial primary key,
+       monthly_salary int
+);
+
+create table roles_salary (
+       id serial primary key,
+       id_role int,
+       id_salary int,
+       foreign key (id_role)
+       references roles (id),
+       foreign key (id_salary)
+       references salary (id)
+);
+
+
+create table service (
+       id serial primary key,
+       service_title varchar(100) not null unique,
+       price int not null
+ );
+
+create table materials (
+       id serial primary key,
+       material_title varchar not null,
+       amount int not null,
+       price int not null
+);
+
+
+create table claim (
+       id serial primary key,
+       service_id int,
+       employee_id int,
+       material_id int,
+       claim_date date,
+       sales_manager int,
+       foreign key (service_id)
+       references service (id),
+       foreign key (employee_id)
+       references employees (id),
+       foreign key (material_id)
+       references materials (id)
+);
+
+
+2. Заполните таблицы данными. Не менее 10 строк в каждой таблице
+
+insert into employees (id, employee_name)
+values (default, 'Alex');
+insert into employees (id, employee_name)
+values (default, 'Aleksei');
+insert into employees (id, employee_name)
+values (default, 'Oleg');
+insert into employees (id, employee_name)
+values (default, 'Vadym');
+insert into employees (id, employee_name)
+values (default, 'Artem');
+insert into employees (id, employee_name)
+values (default, 'Svitlana');
+insert into employees (id, employee_name)
+values (default, 'Olena');
+insert into employees (id, employee_name)
+values (default, 'Tetiana');
+insert into employees (id, employee_name)
+values (default, 'Olga');
+insert into employees (id, employee_name)
+values (default, 'Ruslana');
+
+
+
+insert INTO roles (id, role_title)
+values (default, 'Junior QA Manual');
+insert INTO roles (id, role_title)
+values (default, 'Middle QA Manual');
+insert INTO roles (id, role_title)
+values (default, 'Senior QA Manual');
+insert INTO roles (id, role_title)
+values (default, 'Junior Front-end Developer');
+insert INTO roles (id, role_title)
+values (default, 'Middle Front-end Developer');
+insert INTO roles (id, role_title)
+values (default, 'Senior Front-end Developer');
+insert INTO roles (id, role_title)
+values (default, 'Junior Business Analyst');
+insert INTO roles (id, role_title)
+values (default, 'Junior QA Automation');
+insert INTO roles (id, role_title)
+values (default, 'Middle QA Automation');
+insert INTO roles (id, role_title)
+values (default, 'Senior QA Automation');
+
+
+insert into employees_roles (id, id_role, id_employee)
+values (default, 10, 7);
+insert into employees_roles (id, id_role, id_employee)
+values (default, 9, 8);
+insert into employees_roles (id, id_role, id_employee)
+values (default, 8 , 6);
+insert into employees_roles (id, id_role, id_employee)
+values (default, 7 , 5);
+insert into employees_roles (id, id_role, id_employee)
+values (default, 4 , 3);
+insert into employees_roles (id, id_role, id_employee)
+values (default, 3 , 2);
+insert into employees_roles (id, id_role, id_employee)
+values (default, 2 , 1);
+insert into employees_roles (id, id_role, id_employee)
+values (default, 5 , 4);
+insert into employees_roles (id, id_role, id_employee)
+values (default, 6 , 9);
+insert into employees_roles (id, id_role, id_employee)
+values (default, 7 , 10);
+
+
+insert into salary (id, monthly_salary)
+values (default, 1000);
+insert into salary (id, monthly_salary)
+values (default, 1500);
+insert into salary (id, monthly_salary)
+values (default, 2000);
+insert into salary (id, monthly_salary)
+values (default, 3000);
+insert into salary (id, monthly_salary)
+values (default, 700);
+insert into salary (id, monthly_salary)
+values (default, 500);
+insert into salary (id, monthly_salary)
+values (default, 1200);
+insert into salary (id, monthly_salary)
+values (default, 1400);
+insert into salary (id, monthly_salary)
+values (default, 600);
+insert into salary (id, monthly_salary)
+values (default, 4000);
+
+insert into roles_salary (id, id_role, id_salary)
+values (default, 5, 5);
+insert into roles_salary (id, id_role, id_salary)
+values (default, 6, 6);
+insert into roles_salary (id, id_role, id_salary)
+values (default, 7, 5);
+insert into roles_salary (id, id_role, id_salary)
+values (default, 2, 4);
+insert into roles_salary (id, id_role, id_salary)
+values (default, 1, 9);
+insert into roles_salary (id, id_role, id_salary)
+values (default, 8, 10);
+insert into roles_salary (id, id_role, id_salary)
+values (default, 9, 8);
+insert into roles_salary (id, id_role, id_salary)
+values (default, 10, 7);
+insert into roles_salary (id, id_role, id_salary)
+values (default, 3, 2);
+insert into roles_salary (id, id_role, id_salary)
+values (default, 4, 3);
+
+insert into service (id, service_title, price)
+values (default, 'acccounting', 1000);
+insert into service (id, service_title, price)
+values (default, 'consulting', 1500);
+insert into service (id, service_title, price)
+values (default, 'marketing', 1300);
+insert into service (id, service_title, price)
+values (default, 'web-design', 1800);
+insert into service (id, service_title, price)
+values (default, 'grahic design', 2000);
+insert into service (id, service_title, price)
+values (default, 'audit', 2200);
+insert into service (id, service_title, price)
+values (default, 'legal services', 3000);
+insert into service (id, service_title, price)
+values (default, 'business analysis', 1200);
+insert into service (id, service_title, price)
+values (default, 'reporting', 1400);
+insert into service (id, service_title, price)
+values (default, 'taxation', 1900);
+
+
+insert into materials (id, material_title, amount, price)
+values (default, 'chiffon', 10, 1300);
+insert into materials (id, material_title, amount, price)
+values (default, 'crepe', 8, 1700);
+insert into materials (id, material_title, amount, price)
+values (default, 'denim', 50, 700);
+insert into materials (id, material_title, amount, price)
+values (default, 'lace', 3, 2000);
+insert into materials (id, material_title, amount, price)
+values (default, 'leather', 20, 2500);
+insert into materials (id, material_title, amount, price)
+values (default, 'linen', 17, 3500);
+insert into materials (id, material_title, amount, price)
+values (default, 'satin', 7, 2100);
+insert into materials (id, material_title, amount, price)
+values (default, 'silk', 33, 4000);
+insert into materials (id, material_title, amount, price)
+values (default, 'synthetics', 40, 500);
+insert into materials (id, material_title, amount, price)
+values (default, 'velvet', 10, 2400);
+
+
+insert into claim (id, service_id, employee_id, material_id, claim_date, sales_manager)
+values (default, 3, 5, 10, '2021-11-08', 17);
+insert into claim (id, service_id, employee_id, material_id, claim_date, sales_manager)
+values (default, 3, 5, 10, '2021-11-06', 13);
+insert into claim (id, service_id, employee_id, material_id, claim_date, sales_manager)
+values (default, 2, 10, 1, '2021-10-25', 10);
+insert into claim (id, service_id, employee_id, material_id, claim_date, sales_manager)
+values (default, 1, 4, 9, '2021-10-30', 2);
+insert into claim (id, service_id, employee_id, material_id, claim_date, sales_manager)
+values (default, 4, 9, 2, '2021-11-03',17);
+insert into claim (id, service_id, employee_id, material_id, claim_date, sales_manager)
+values (default, 5, 3, 8, '2021-11-10', 31);
+insert into claim (id, service_id, employee_id, material_id, claim_date, sales_manager)
+values (default, 6, 8, 3, '2021-10-18', 23);
+insert into claim (id, service_id, employee_id, material_id, claim_date, sales_manager)
+values (default, 7, 2, 7, '2021-10-27', 32);
+insert into claim (id, service_id, employee_id, material_id, claim_date, sales_manager)
+values (default, 10, 7, 2, '2021-11-03', 25);
+insert into claim (id, service_id, employee_id, material_id, claim_date, sales_manager)
+values (default, 9, 1, 6, '2021-11-29', 9);
+insert into claim (id, service_id, employee_id, material_id, claim_date, sales_manager)
+values (default, 8, 6, 1, '2021-10-29', 10);
+
+
+3. Добавить таблицу Suppliers с полями id, name
+create table suppliers (
+      id serial primary key,
+      name varchar(50)
+);
+
+4. Добавить 10 строк поставщиков в таблицу Suppliers
+
+insert into suppliers (id, name)
+values (default, 'Ivan');
+insert into suppliers (id, name)
+values (default, 'Petro');
+insert into suppliers (id, name)
+values (default, 'Valentyn');
+insert into suppliers (id, name)
+values (default, 'Sergiy');
+insert into suppliers (id, name)
+values (default, 'Artem');
+insert into suppliers (id, name)
+values (default, 'Vlad');
+insert into suppliers (id, name)
+values (default, 'Stepan');
+insert into suppliers (id, name)
+values (default, 'Ivanna');
+insert into suppliers (id, name)
+values (default, 'Tetiana');
+insert into suppliers (id, name)
+values (default, 'Lilia');
+
+
+5. Обновить таблицу Materials. Добавить поле suplier_id которое связано с полем id в таблице Suppliers
+alter table materials
+add supplier_id int;
+
+alter table materials
+add foreign key (supplier_id)
+references suppliers (id);
+
+6. Обновить таблицу Employees. Добавить varchar поле surname на 50 символов.
+alter table employees
+add surname varchar(50);
+
+7. Обновить таблицу Salary. Добавить varchar поле currency на 7 символов.
+alter table salary
+add currency varchar(7);
+
