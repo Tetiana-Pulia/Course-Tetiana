@@ -1,0 +1,121 @@
+1)Посмотреть, где я – pwd (print working directory)
+2) Создать папку mkdir Nameholder (make directory)
+3) Зайти в папку: cd Namefolder (якщо в поточній директорії)
+Або сd /path/to/file/ Namefolder (якщо не в поточній директорії)
+cd=change directory
+4) Создать 3 папки 
+mkdir Namefolder1 Namefolder2 Namefolder3 (три папки одного рівня)
+mkdir -p Namefolder1/Namefolder2/Namefolder 3 (з піддиректоріями)
+5) Зайти в любую папку
+cd /path/to/folder/ (наприклад, Videos/курс, але тільки якщо знаю точний шлях до цієї папки)
+сd Namefolder (зайти в папку, яка знаходиться в поточній директории)
+6) Создать 5 файлов (3 txt, 2 json) 
+touch 1.txt 2.txt 3.txt
+mkdir -p Namefolder 1/Namefolder 2 | touch Namefolder 1/Namefolder 2/ 4.json
+mkdir -p Namefolder 3/Namefolder 4
+touch Namefolder 3/Namefolder 4/5.json
+7) Создать 3 папки. 
+mkdir Namefolder1 Namefolder2 Namefolder3 (три папки одного рівня)
+mkdir -p Namefolder1/Namefolder2/Namefolder 3 (з піддиректоріями)
+8) Вивести список вмісту папки
+•	ls (без прихованих файлів і в рядок просто назви файлів, без їх ваги та прав доступу, тобто в короткому виді)
+•	ls -a (з прихованими файлами і в рядок просто назви файлів, без їх ваги та прав доступу, тобто в короткому виді)
+•	ls -l (без прихованих файлів, всі деталі, включаючи імя файлів, їх вагу, права доступу, дата останніх змін, тобто довгий вигляд long list)
+•	ls -la (з прихованими файлами і стовпцями і це довге представлення, там і права доступу, і розмір файлів, коли файл було змінено востаннє, не лише назва) la в цьому випадку це ключ до команди, тому можна писати цю команду як ls -la, або як ls -al, або як ls -l -a
+
+9) + Открыть любой txt файл vim Filename 
+cat Filename в цьому випадку зміст файлу відкриється не в окремому вікні, а прям тут же в Git Bush в консолі буде написаний рядок за рядком
+
+10) + написать туда что-нибудь, любой текст. Нажати i (це перехід в Edit mode)
+11) + сохранить и выйти.  
+Нажать Esc (или Ctrl +C), щоб перейти в Command mode
+Написати в командному рядку :x (или wq! или :x!) 
+:w	Save and continue editing.
+:q!	Quit vi and do not save changes.
+
+
+12) Выйти из папки на уровень выше: cd ..
+cd / перейти в корневий каталог
+cd ../..  перейти на дві директорії вище
+
+13) переместить любые 2 файла, которые вы создали, в любую другую папку.
+mv Path/to/this/file/Filename New/path/to/the/new/folder (по одному, незалежно від того, у якій директорії зараз знаходишся)
+mv /c/Users/tetia/Videos/курс_инфодизайн/3.txt /c/Users/tetia/Videos/курс_инфодизайн/Таня
+Якщо знаходишся в тій директорії, де і файли лежать зараз, то можна так
+mv Filename /Path/to/the/new/Folder
+Якщо зразу кілька файлів, то mv file1.ext1 file2.ext2 file3.ext3 /destination/
+!але треба знаходитися в тій директорії, де ці файли зараз перебувають, бо виб’є, що помилка
+
+14) скопировать любые 2 файла, которые вы создали, в любую другую папку. 
+cp Way/to/this/file/Filename Way/to/the/new/folder
+якщо кілька зразу файлів
+сp file1.ext1 file2.ext2 file3.ext3.. /destination/
+!але треба знаходитися в тій директорії, де ці файли зараз перебувають, бо вибє, що помилка
+
+15) Найти файл по имени 
+але це пошук файлу в поточній папці, де і знаходжуся
+•	find . -name Filename (покаже всі папки, де access чи permission denied, тобто вилізе дуже багато тексту, у якому складно помітити свій файл) 
+•	find -name Filename (покаже всі папки, де access denied, тобто вилізе дуже багато тексту)
+•	find . -name Filename 2>/dev/null (тоді не буде показувати, куди access denied, а чітко покаже зразу потрібний файл)
+find ./ -type f -name Filename шукати по всьому компу, де може бути цей файл
+
+16) просмотреть содержимое в реальном времени (2 варианта)
+•	cat Filename
+•	tail -f Filename
+tail -f 2.txt
+
+(команда grep) изучите как она работает.
+Grep is used to search some line/text in the particular file
+Grep «Word» Filename 
+
+17) вывести несколько первых строк из текстового файла 
+To view the first ten lines of a file: head Filename
+
+To view a certain number of first lines in a file: head -n Filename тут n= number of lines
+
+
+
+18) вывести несколько последних строк из текстового файла 
+To view the last ten lines of a file: tail Filename
+
+To view a certain number of last lines in a file: tail -n Filename тут n=number of lines
+
+
+19) просмотреть содержимое длинного файла (команда less) изучите как она работает. 
+less Filename
+
+less 2_частина.docx
+відкривається в новому вікні текст
+
+
+20) вывести дату и время date
+
+========= Задание *
+1)	Отправить http запрос на сервер. https://api.quarantine.country/api/v1/regions 
+Curl -p «https://api.quarantine.country/api/v1/regions»
+
+2) Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13 
+•	mkdir myscript1.sh
+•	vim myscript1.sh
+•	нажимаю I для введення тексту і пишу перший рядок такий #! /bin/bash
+•	вводжу сам скрипт
+•	нажимаю ESC, потім wq
+•	в консолі пишу ./myscript1.sh
+
+
+CКРИПТ
+cd /c/Redesign_landing
+mkdir -p Day_1/Lesson_1/Additional_info
+cd Day_1/Lesson_1
+touch 1.txt 2.txt 3.txt 4.json
+touch /c/Redesign_landing/Day_1/Lesson_1/Additional_info/5.json
+cd Additional_info/
+mkdir My_search Links Portfolio
+ls -la
+mv 5.json /c/Redesign_landing/Day_1/Lesson_1
+cd ..
+mv 1.txt /c/Redesign_landing/Day_1/Lesson_1/Additional_info/My_search
+
+
+
+
