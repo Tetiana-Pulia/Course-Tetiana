@@ -6,9 +6,9 @@
 
 -*HW3* Checklist iOS Release Notes
 
--*HW 4* Checklist iOS Human Interface Guidelines
+-*HW4* Checklist iOS Human Interface Guidelines
 
--*HW 5* Checklist Material Design Android
+-*HW5* Checklist Material Design Android
 
 -*HW6* Checklist High Quality Apps for Android
 
