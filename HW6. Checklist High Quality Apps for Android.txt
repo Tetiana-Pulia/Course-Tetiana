@@ -1,0 +1,44 @@
+NAVIAGATION
+1.	The app supports standard Back button navigation and does not make use of any custom, on-screen "Back button" prompts.
+2.	The app supports gesture navigation for going back / going to the home screen.
+3.	The app correctly preserves and restores user or app state.
+4.	The app preserves user or app state when leaving the foreground and prevents accidental data loss due to back-navigation and other state changes.
+5.	When returning to the foreground, the app should restore the preserved state and any significant stateful transaction that was pending. Examples include: changes to editable fields, game progress, menus, videos, and other sections of the app or game.
+6.	When the app is resumed from the Recents app switcher, the app returns the user to the exact state in which it was last used.
+7.	When the app is resumed after the device wakes from the sleep (locked) state, the app returns the user to the exact state in which it was last used.
+8.	When the app is relaunched from Home or All Apps, it should do one of the following, depending on how much time has passed since it was last used:
+
+•	If the app was last used a short time ago (minutes), restore the app state as close as possible to its previous state.
+•	If more time has passed since the app was last used, try to restore the app as close as possible to its previous state; or start it from its home screen or some other default state.
+
+NOTIFICATIONS
+
+9.	Notifications are not used for cross-promotion or advertising another product, as this is strictly prohibited by the Play Store.
+10.	Notification channels are defined according to best practices, rather than serving all notifications from one channel.
+11.	Selecting the correct notification priority.
+12.	Multiple notifications are stacked into a single notification group, where possible.
+13.	Set timeouts for notifications where appropriate.
+14.	Use the MessagingStyle notifications for conversations. Support the direct reply action. Support conversation shortcuts, and implement best practices for getting the best direct share ranking.
+
+UI and GRAPHICS
+15.	The app supports both landscape and portrait orientations (if possible) and folding / unfolding.
+16.	Orientations expose largely the same features and actions and preserve functional parity. Minor changes in content or views are acceptable.
+17.	The app uses the whole screen in both orientations and does not letterbox to account for orientation changes, including folding and unfolding.
+18.	app correctly handles rapid transitions between display orientations and device folding / unfolding without rendering problems or losing state.
+
+VISUAL QUALITY	
+19.	The app displays graphics, text, images, and other UI elements without noticeable distortion, blurring, or pixelation.
+•	The app should use vector drawables where possible.
+•	The app provides high-quality graphics for all targeted screen sizes and form factors.
+•	No aliasing at the edges of menus, buttons, and other UI elements is visible.
+
+20.	The app displays text and text blocks in an acceptable manner for each of the app’s supported languages.
+•	No cut-off letters or words are visible.
+•	No improper word wraps within buttons or icons are visible.
+•	There is sufficient spacing between text and surrounding elements.
+
+21.	The app’s content, and all web contents referred to by the app, support dark theme.
+
+ACCESSABILITY
+22.	Touch targets should be at least 48dp in size. Learn more.
+23.	The app’s text and foreground content should maintain a high enough color contrast ratio with its background
