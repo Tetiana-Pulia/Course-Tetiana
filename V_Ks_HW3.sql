@@ -1,6 +1,10 @@
-/*1. Создайте базу из представленной картинки.
-      - У каждой таблицы должно быть поле id
-      - id автоинкрементальный и является первичным ключом*/
+/* РџРѕРґРєР»СЋС‡РёС‚РµСЃСЊ Рє СЃРІРѕРµР№ Р±Р°Р·Рµ РґР°РЅРЅС‹С…
+SQL Р·Р°РїСЂРѕСЃС‹ Рё СЃРєСЂРёРЅ РґРёР°РіСЂР°РјРјС‹ РІС‹РіСЂСѓР·РёС‚СЊ РЅР° GitHub
+РўР°Р±Р»РёС†Р° СЃ Р±Р°Р·Р°РјРё Рё РїРѕР»СЊР·РѕРІР°С‚РµР»СЏРјРё - https://docs.google.com/spreadsheets/d/1cMpfCPcXeVyczGGhxjaM03gDoBp2pC8gx3oAE_SasTs/edit?usp=sharing*/
+
+ /* 1. РЎРѕР·РґР°Р№С‚Рµ Р±Р°Р·Сѓ РёР· РїСЂРµРґСЃС‚Р°РІР»РµРЅРЅРѕР№ РєР°СЂС‚РёРЅРєРё.
+      - РЈ РєР°Р¶РґРѕР№ С‚Р°Р±Р»РёС†С‹ РґРѕР»Р¶РЅРѕ Р±С‹С‚СЊ РїРѕР»Рµ id
+      - id Р°РІС‚РѕРёРЅРєСЂРµРјРµРЅС‚Р°Р»СЊРЅС‹Р№ Рё СЏРІР»СЏРµС‚СЃСЏ РїРµСЂРІРёС‡РЅС‹Рј РєР»СЋС‡РѕРј */
 
 create table employees (
 id serial primary key,
@@ -42,7 +46,7 @@ create table service (
 
 create table materials (
        id serial primary key,
-       material_title varchar not null,
+       material_title varchar(100) not null,
        amount int not null,
        price int not null
 );
@@ -61,7 +65,7 @@ create table claim (
 );
 
 
-/*2. Заполните таблицы данными. Не менее 10 строк в каждой таблице*/
+/*2. Р—Р°РїРѕР»РЅРёС‚Рµ С‚Р°Р±Р»РёС†С‹ РґР°РЅРЅС‹РјРё. РќРµ РјРµРЅРµРµ 10 СЃС‚СЂРѕРє РІ РєР°Р¶РґРѕР№ С‚Р°Р±Р»РёС†Рµ */
 
 insert into employees (employee_name)
 values ('Alex'),
@@ -110,7 +114,7 @@ values (1000),
        (1200),
        (1400),
        (600),
-       (4000),
+       (4000);
 
 insert into roles_salary (id_role, id_salary)
 values (5, 5),
@@ -122,7 +126,7 @@ values (5, 5),
        (9, 8),
        (10, 7),
        (3, 2),
-       (4, 3),
+       (4, 3);
 
 insert into service (service_title, price)
 values ('acccounting', 1000),
@@ -162,15 +166,15 @@ values (3, 5, 10, '2021-11-08', 17),
        (9, 1, 6, '2021-11-29', 9),
        (8, 6, 1, '2021-10-29', 10);
 
-/*3. Добавить таблицу Suppliers с полями id, name*/
+/*3. Р”РѕР±Р°РІРёС‚СЊ С‚Р°Р±Р»РёС†Сѓ Suppliers СЃ РїРѕР»СЏРјРё id, name*/
       
 create table suppliers (
       id serial primary key,
-      name not null unique varchar(50)
+      name varchar(50) unique not null 
 );
 
 
-/*4. Добавить 10 строк поставщиков в таблицу Suppliers*/
+/*4. Р”РѕР±Р°РІРёС‚СЊ 10 СЃС‚СЂРѕРє РїРѕСЃС‚Р°РІС‰РёРєРѕРІ РІ С‚Р°Р±Р»РёС†Сѓ Suppliers */
 
 insert into suppliers (name)
 values ('Ivan'),
@@ -184,7 +188,7 @@ values ('Ivan'),
        ('Tetiana'),
        ('Lilia');
 
-/*5. Обновить таблицу Materials. Добавить поле suplier_id которое связано с полем id в таблице Suppliers*/
+/*5. РћР±РЅРѕРІРёС‚СЊ С‚Р°Р±Р»РёС†Сѓ Materials. Р”РѕР±Р°РІРёС‚СЊ РїРѕР»Рµ suplier_id РєРѕС‚РѕСЂРѕРµ СЃРІСЏР·Р°РЅРѕ СЃ РїРѕР»РµРј id РІ С‚Р°Р±Р»РёС†Рµ Suppliers */
       
 alter table materials
 add supplier_id int;
@@ -193,11 +197,11 @@ alter table materials
 add
 foreign key (supplier_id) references suppliers (id);
 
-/*6. Обновить таблицу Employees. Добавить varchar поле surname на 50 символов.*/
+/*6. РћР±РЅРѕРІРёС‚СЊ С‚Р°Р±Р»РёС†Сѓ Employees. Р”РѕР±Р°РІРёС‚СЊ varchar РїРѕР»Рµ surname РЅР° 50 СЃРёРјРІРѕР»РѕРІ. */
 alter table employees
 add surname varchar(50);
 
-/*7. Обновить таблицу Salary. Добавить varchar поле currency на 7 символов.*/
+/*7. РћР±РЅРѕРІРёС‚СЊ С‚Р°Р±Р»РёС†Сѓ Salary. Р”РѕР±Р°РІРёС‚СЊ varchar РїРѕР»Рµ currency РЅР° 7 СЃРёРјРІРѕР»РѕРІ. */
 alter table salary
 add currency varchar(7);
 
